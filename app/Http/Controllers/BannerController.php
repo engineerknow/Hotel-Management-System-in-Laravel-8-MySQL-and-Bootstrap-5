@@ -47,7 +47,7 @@ class BannerController extends Controller
         }else{
             $imgPath=null;
         }
-        
+
         $data=new Banner;
         $data->banner_src=$imgPath;
         $data->alt_text=$request->alt_text;
@@ -76,7 +76,7 @@ class BannerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
+    {
         $data=Banner::find($id);
         return view('banner.edit',['data'=>$data]);
     }
@@ -100,7 +100,7 @@ class BannerController extends Controller
         }else{
             $imgPath=$request->prev_photo;
         }
-        
+
         $data=Banner::find($id);
         $data->banner_src=$imgPath;
         $data->alt_text=$request->alt_text;
